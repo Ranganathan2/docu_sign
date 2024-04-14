@@ -15,7 +15,7 @@ class LoanDetails extends Controller
                . "  WHERE a.lbc_borrower_code = b.usercode ";
 
 
-        $psLoanDetails = DB::select(DB::Raw( $psSql ));
+        $psLoanDetails = DB::connection('mysql2')->select(DB::Raw( $psSql ));
 
         $psStatusCd = "SUCCESS";
 

@@ -1,9 +1,9 @@
 @include('Main')
 
 <body>
-    <div class="container-loan">
-        <div class="title"><h3>Loan Details List</h3></div>
-        <table class="table caption-top" id="LoanDetailsList">
+    <div class="container-loan" style="padding-top: 85px;width: 70%;margin: auto;">
+        <div class="title"><h3 style="text-align: center;">Loan Details List</h3></div>
+        <table class="table caption-top" id="LoanDetailsList" style="width:100%;">
             <caption>List of users</caption>
             <thead>
                 <tr>
