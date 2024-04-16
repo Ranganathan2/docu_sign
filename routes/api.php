@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Address;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/address/auto-complete', [Address::class, 'getGetFullAddress']);
+
+// Route::prefix('api')->group(function(){
+//     // dd("");
+//     Route::get('/address/auto-complete', [Address::class, 'getGetFullAddress']);
+// });

@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LoanDetails;
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,8 +21,16 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+
+    return view('docu_sign.dashboard');
+
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/dashboard/profile', function(){
+
+    return view('docu_sign.profile');
+
+})->middleware(['auth', 'verified'])->name('profile');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -122,4 +131,17 @@ Route::prefix('admin')->group(function(){
     Route::get('/users', function () {
         // Matches The "/admin/users" URL
     });
+});
+
+Route::prefix('admin.')->group(function(){
+    Route::get('/users', function () {
+        // Matches The "/admin/users" URL
+    });
+})->name('users');
+
+//==============================================
+// Model Route Binding
+//==============================================
+Route::get('/lbconnect/{user?}', function(User $psLoanDetails){
+    return view('LoanDetailsList', ['psLoanDetails' => $psLoanDetails]);
 });
