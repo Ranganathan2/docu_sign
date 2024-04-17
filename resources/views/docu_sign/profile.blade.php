@@ -4,9 +4,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBH0chJJOex9mJGIdocfxKird-OLPlBNDME&libraries=places"></script>
-        {{-- <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyBfIxjNTFoq5i_T1TwZV_L90sx37lbHsDs&libraries=places"></script> --}}
+        <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=your-api-key&libraries=places"></script>
         @include('Main')
+        AIzaSyBfIxjNTFoq5i_T1TwZV_L90sx37lbHsDs
         <script>
             google.maps.event.addDomListener(window, 'load', initialize);
 
